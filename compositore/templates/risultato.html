@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <!-- Se stai leggendo questo e sai usare uno o alcuni fra:
+    html, css, python, django, javascript, sql, e/o altra roba da smanettoni
+    e stai cercando lavoro da remoto contattami: kurtisoloadc@gmail.com -->
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L8DLQ6QBL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2L8DLQ6QBL');
+</script>
+    <title>Risultato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        .version {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 1px;
+            text-align: center;
+            color: #530505
+        }
+        .version2 {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 1px;
+            text-align: left;
+            color: #000000
+        }
+        h1 {
+            color: #530505;
+            font-size: 26px;
+            margin-bottom: 1px;
+            text-align: center;
+            font-family: 'Beast', Arial, sans-serif;
+            vertical-align: bottom;
+            
+        }
+        h2 {
+            color: #3d3318;
+            font-size: 22px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Bible', Arial, sans-serif;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+        h3 {
+            color: #2c2c2c;
+            font-size: 23px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: none;
+        }
+        .condividi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .condividi-text {
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight:bold;
+            color: #333;
+        }
+        .condividi-icons {
+            display: flex;
+            align-items: center;
+        }
+        .condividi-icons a {
+            margin-right: 10px;
+        }
+        .condividi-icons a:last-child {
+            margin-right: 0;
+        }
+        .condividi-icons img {
+            width: 35px;
+            height: 35px;
+            vertical-align: middle;
+        }
+        button[type="submit"] {
+            font-weight: bold;
+            margin: 16px auto;
+            padding: 10px 27px;
+            background-color: #743232;
+            box-shadow: 0px 3px 0px 0px #470404;
+            color: white;
+            border: 1px solid #af5b5b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 21px;
+            display: block;
+            width: 70%;
+        }
+        button[type="button"] {
+            font-weight: bold;
+            margin: 16px auto;
+            padding: 10px 27px;
+            background-color: #8d6868;
+            box-shadow: 0px 3px 0px 0px #4e1a1a;
+            color: white;
+            border: 1px solid #635454;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 17px;
+            display: block;
+            width: 63%;
+        }
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+        .result-box {
+            background-color: #faf6ed;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 80%; 
+            height: 200px; 
+            overflow: auto;
+            margin-left: auto; 
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .audio-icon {
+            position: absolute;
+            bottom: 20px; 
+            right: 20px; 
+            width: 30px;
+            height: 30px;
+        }
+        a {
+            color: #530505;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Bestemmiatore</h1>
+    <p class="version">v1.0.1 - ultimo aggiornamento: 30 giugno 2023 - creato da <a href="https://www.instagram.com/opposable.thumb/">Kurtisolo</a></p>
+    <div class="box">
+        <h3>Ecco la tua bestemmia:</h3>
+        <div class="result-box">
+            <h2>{{ risultato }}</h2>
+            <img class = "audio-icon" id="audioIcon" src="{% static 'audio.png' %}" alt="Icona">
+        </div>
+
+        </audio>
+        <div class="condividi">
+            <span class="condividi-text">Condividi:</span>
+            <div class="condividi-icons">
+                <a href="https://api.whatsapp.com/send?text={{ risultato }}%20(Generato%20su:%20{{ request.build_absolute_uri }} )" target="_blank" rel="noopener noreferrer" class="whatsapp-icon">
+                    <img src="{% static 'whatsapp.png' %}" alt="Condividi su WhatsApp">
+                </a>
+                <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ risultato }}%20(generato%20su:%20{{ request.build_absolute_uri }})" target="_blank" rel="noopener noreferrer" class="telegram-icon">
+                    <img src="{% static 'telegram.png' %}" alt="Condividi su Telegram">
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&quote={{ risultato }}%20(generato%20su:%20{{ request.build_absolute_uri }})" target="_blank" rel="noopener noreferrer" class="facebook-icon">
+                    <img src="{% static 'facebook.png' %}" alt="Condividi su Facebook">
+                </a>
+                <a href="https://www.instagram.com/direct/new/?text={{ risultato }}%20(generato%20su:%20{{ request.build_absolute_uri }})" target="_blank" rel="noopener noreferrer" class="instagram-icon">
+                    <img src="{% static 'instagram.png' %}" alt="Condividi su Instagram">
+                </a>
+
+            </div>
+        </div>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="potenza" value="{{ potenza }}">
+            <input type="hidden" name="complessita" value="{{ complessita }}">
+            <button type="submit">Genera nuova<br>bestemmia</button>
+            <button type="button" onclick="location.href='/'">Modifica impostazioni</button>
+        </form>
+    </div>
+    <p class="version2">Copyrights © 2023 All Rights Reserved</p>
+    <script>
+        document.getElementById('audioIcon').addEventListener('click', function() {
+            var audio = new Audio("{{ audio_file_path }}");
+            audio.play();
+        });
+    </script>
+</script>
+</body>
+</html>

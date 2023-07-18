@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<!-- Se stai leggendo questo e sai usare uno o alcuni fra:
+    html, css, python, django, javascript, sql, e/o altra roba da smanettoni
+    e stai cercando lavoro da remoto contattami: kurtisoloadc@gmail.com -->
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L8DLQ6QBL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2L8DLQ6QBL');
+    </script>
+
+    <!-- Titolo e importazioni -->
+    <title>Bacheca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
+    
+    <!-- Descrizione -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        .version {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 1px;
+            text-align: center;
+            color: #530505
+        }
+        .version2 {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            text-align: left;
+            color: #000000
+        }
+        h1 {
+            color: #530505;
+            font-size: 26px;
+            margin-bottom: 1px;
+            text-align: center;
+            font-family: 'Beast', Arial, sans-serif;
+            vertical-align: bottom;
+            
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Beast', Arial, sans-serif;
+        }
+        h3 {
+            color: #333;
+            font-size: 19px;
+            margin: 5px;
+            text-align: center;
+        }
+        h4 {
+            color: #747171;
+            font-size: 9px;
+            margin-top: 17px;
+            margin-bottom: 2px;
+            text-align:left;
+            font-weight: normal;
+        }         
+        li {
+            margin: 10px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #530505;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button {
+            font-weight: bold;
+            margin: 16px auto;
+            padding: 10px 27px;
+            background-color: #743232;
+            box-shadow: 0px 3px 0px 0px #470404;
+            color: white;
+            border: 1px solid #af5b5b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            display: block;
+            width: 70%;
+        }
+        .button:hover {
+            background-color: #af5b5b;
+        }
+        .button-like {
+            font-weight: normal;
+            box-shadow: 0px 3px 3px 0px #7c7f8d;
+            border-radius: 20px;
+            margin-right: 20px;
+            background-color: #5a9273; 
+            border: 1px solid #3f7055;
+            font-size: 16px;
+            padding: 7px 7px;
+            display: flex;
+            justify-content: center;
+        }        
+        .button-highlight {
+            margin-right: 10px; /* Aggiungi spazio tra i pulsanti */
+            background-color: #743232;
+            box-shadow: 0px 3px 0px 0px #470404;
+            color: white;
+            border: 1px solid #af5b5b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px; /* Riduci la dimensione del testo */
+            display: block;
+            width: 70%;
+            padding: 8px 20px; /* Riduci il valore del padding */
+        }
+        .button-highlight2 {
+            background-color: #705a5a;
+            box-shadow: 0px 3px 0px 0px #524343;
+            color: white;
+            border: 1px solid #705a5a;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px; /* Riduci la dimensione del testo */
+            display: block;
+            width: 70%;
+            padding: 8px 20px;
+        }
+
+        .button-highlight:hover {
+            background-color: #af5b5b;
+        }
+        .button-container {
+            background-color: #f2f2f200;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0px;;
+            display: flex;
+            justify-content: center;
+        }
+        
+        li.button-list-item {
+            margin: 10px;
+            border: 1px solid #EEF0F2;
+            box-shadow: 0px 3px 3px 0px #9ea3a3c4;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #eef0f2e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .alert {
+            background-color: #ffe0e0;
+            color: #460000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            form {
+                padding: 10px;
+            }
+
+            .form-group label {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+
+            .form-group input[type="text"],
+            .form-group select {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        ul.bestemmie-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.bestemmie-list li {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .audio-icon {
+            position: absolute;
+            bottom: 15px; 
+            right: 15px; 
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bestemmiatore</h1>
+    <p class="version">v1.0.1 - ultimo aggiornamento: 30 giugno 2023 - creato da <a href="https://www.instagram.com/opposable.thumb/">Kurtisolo</a></p>
+    
+    <h2>Bacheca:</h2>
+    <ul class="bestemmie-list">
+        {% for bestemmia in bestemmie %}
+        <li>
+            <form>
+                <h3>"{{ bestemmia.bestemmia_bacheca }}"</h3>
+                <h4>Aggiunta il: {{ bestemmia.data_bestemmia|date:"d F Y"}} da: Anonimo</h4>
+                <!--
+                Aggiunta il: {{ bestemmia.data_bestemmia }}<br>
+                <strong>Mi piace:</strong> <span id="likes-count-{{ bestemmia.id }}">{{ bestemmia.likes_bestemmia }}</span>
+                <button class="button button-like" onclick="addLike('{{ bestemmia.id }}'); event.preventDefault();">Mi piace</button>-->
+                <img class="audio-icon" src="{% static 'audio.png' %}" alt="Icona" onclick="playAudio('{{ bestemmia.audio_file_path }}')">
+                <audio id="audio-{{ bestemmia.id }}" src="{{ bestemmia.audio_file_path }}"></audio>
+            </form>
+        </li>
+        {% empty %}
+        <li>Nessuna bestemmia disponibile.</li>
+        {% endfor %}
+    </ul>
+    <br><br><br><br><br><br><br>
+    <div class="button-container">
+        <ul>
+            <li class="button-list-item">
+                <button class="button button-highlight" onclick="location.href='/bacheca/contribuisci'">Aggiungi una bestemmia</button>
+                <button class="button button-highlight2" onclick="location.href='/'">Torna al Bestemmiatore</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        function addLike(bestemmiaId) {
+            window.location.href = "/bacheca/liked/" + bestemmiaId + "/";
+        }
+    </script>
+<script>
+    function playAudio(audioFilePath) {
+        var audio = new Audio("/" + audioFilePath);
+        audio.play();
+    }
+</script>
+    <p class="version2">Copyrights © 2023 All Rights Reserved</p>
+
+
+
+</body>
+</html>

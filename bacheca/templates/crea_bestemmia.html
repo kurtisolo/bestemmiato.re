@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <!-- Se stai leggendo questo e sai usare uno o alcuni fra:
+    html, css, python, django, javascript, sql, e/o altra roba da smanettoni
+    e stai cercando lavoro da remoto contattami: kurtisoloadc@gmail.com -->
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L8DLQ6QBL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2L8DLQ6QBL');
+</script>
+    <title>Dì la tua</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        .version {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 1px;
+            text-align: center;
+            color: #530505
+        }
+        .version2 {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            text-align: left;
+            color: #000000
+        }
+        h1 {
+            color: #530505;
+            font-size: 26px;
+            margin-bottom: 1px;
+            text-align: center;
+            font-family: 'Beast', Arial, sans-serif;
+            vertical-align: bottom;
+            
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #530505;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 94%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button {
+            font-weight: bold;
+            margin: auto;
+            padding: 10px 27px;
+            background-color: #743232;
+            box-shadow: 0px 3px 0px 0px #470404;
+            color: white;
+            border: 1px solid #af5b5b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            display: block;
+            width: 70%;
+        }
+
+        .button:hover {
+            background-color: #300404;
+        }
+
+        .alert {
+            background-color: #ffe0e0;
+            color: #460000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: left;
+        }
+        .button-highlight {
+            margin-right: 10px; /* Aggiungi spazio tra i pulsanti */
+            background-color: #705a5a;
+            box-shadow: 0px 3px 0px 0px #463e3e;
+            color: white;
+            border: 1px solid #705a5a;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px; /* Riduci la dimensione del testo */
+            display: block;
+            width: 70%;
+            padding: 8px 15px; /* Riduci il valore del padding */
+        }
+        .button-highlight2 {
+            background-color: #705a5a;
+            box-shadow: 0px 3px 0px 0px #463e3e;
+            color: white;
+            border: 1px solid #705a5a;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px; /* Riduci la dimensione del testo */
+            display: block;
+            width: 70%;
+            padding: 8px 15px;
+        }
+                .button-small {
+  width: 48%;
+}
+
+        .button-highlight:hover {
+            background-color: #af5b5b;
+        }
+        @media (max-width: 480px) {
+            form {
+                padding: 10px;
+            }
+
+            .form-group label {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+
+            .form-group input[type="text"],
+            .form-group select {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 10px;
+        }
+        li.button-list-item {
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bestemmiatore</h1>
+    <p class="version">v1.0.1 - ultimo aggiornamento: 30 giugno 2023 - creato da <a href="https://www.instagram.com/opposable.thumb/">Kurtisolo</a></p>
+    
+    <form method="POST" action="{% url 'crea_bestemmia' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_bestemmia_bacheca">Aggiungi la tua bestemmia alla bacheca:</label>
+            <input type="text" id="id_bestemmia_bacheca" name="bestemmia_bacheca">
+        </div>    
+        <button type="submit" class="button">Aggiungi</button>  
+    </form>
+    <ul>
+        <li class="button-list-item">
+            <button class="button button-highlight button-small" onclick="location.href='/bacheca'">Torna alla bacheca</button>
+            <button class="button button-highlight2 button-small" onclick="location.href='/'">Torna al Bestemmiatore</button>
+        </li>
+    </ul>  
+
+
+    <p class="version2">Copyrights © 2023 All Rights Reserved</p>
+</body>
+</html>

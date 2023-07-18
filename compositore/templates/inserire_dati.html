@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<!-- Se stai leggendo questo e sai usare uno o alcuni fra:
+    html, css, python, django, javascript, sql, e/o altra roba da smanettoni
+    e stai cercando lavoro da remoto contattami: kurtisoloadc@gmail.com -->
+<head>
+    <script type="text/javascript">
+        var _iub = _iub || [];
+        _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableLgpd":true,"enableTcf":true,"floatingPreferencesButtonDisplay":"anchored-bottom-left","googleAdditionalConsentMode":true,"perPurposeConsent":true,"siteId":3195820,"tcfPurposes":{"2":"consent_only","3":"consent_only","4":"consent_only","5":"consent_only","6":"consent_only","7":"consent_only","8":"consent_only","9":"consent_only","10":"consent_only"},"whitelabel":false,"cookiePolicyId":32569019,"lang":"it", "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"rejectButtonDisplay":true }};
+        </script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L8DLQ6QBL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2L8DLQ6QBL');
+</script>
+    <title>Bestemmiatore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        .version {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 1px;
+            text-align: center;
+            color: #530505
+        }
+        .version2 {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            text-align: left;
+            color: #000000
+        }
+        h1 {
+            color: #530505;
+            font-size: 26px;
+            margin-bottom: 1px;
+            text-align: center;
+            font-family: 'Beast', Arial, sans-serif;
+            vertical-align: bottom;
+            
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+            font-weight: normal;
+            font-size: 15px;
+            text-align: center;           
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #530505;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button {
+            font-weight: bold;
+            margin: 16px auto;
+            padding: 10px 27px;
+            background-color: #743232;
+            box-shadow: 0px 3px 0px 0px #470404;
+            color: white;
+            border: 1px solid #af5b5b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            display: block;
+            width: 70%;
+        }
+
+        .button:hover {
+            background-color: #300404;
+        }
+
+        .alert {
+            background-color: #ffe0e0;
+            color: #460000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            form {
+                padding: 10px;
+            }
+
+            .form-group label {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+
+            .form-group input[type="text"],
+            .form-group select {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        .novita-label {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+<body>
+
+    <h1>Bestemmiatore</h1>
+    <p class="version">v1.0.1 - ultimo aggiornamento: 30 giugno 2023 - creato da <a href="https://www.instagram.com/opposable.thumb/">Kurtisolo</a></p>
+    <div class="alert">
+        <p>Attenzione: l'applicazione è ancora in fase di test, pertanto i risultati potrebbero non essere perfetti.<br>Verranno effettuati regolari aggiornamenti per migliorare l'esperienza e implementare nuove funzionalità.</p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_orario">Livello di incazzatura:</label>
+            {{ form.potenza }}
+        </div>
+        <div class="form-group">
+            <label for="id_n_min">Complessità dell'enunciato:</label>
+            {{ form.complessita }}
+        </div>
+        <button class="button">Genera bestemmia</button>
+        <h3>Oppure:</h3>
+        <button class="button" onclick="location.href='/bacheca'">Visita la bacheca<span class="novita-label">NOVITÀ!</span></button>
+
+    </form>
+    <p class="version2">Copyrights © 2023 All Rights Reserved</p>
+<br>
+<br>
+<br>
+<a href="https://www.iubenda.com/privacy-policy/32569019" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+<a href="https://www.iubenda.com/privacy-policy/32569019/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+</body>
+</html>
