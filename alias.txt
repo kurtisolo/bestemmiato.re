@@ -1,9 +1,12 @@
 ===>> COMUNI <<===
-runserverdj = python manage.py runserver
-makemigrations = python manage.p makemigrations
-migrate = python manage.py migrate
-graph = git log --all --decorate --oneline --graph
+
+runserver = alias runserver="python manage.py runserver"
+makemigrations = alias makemigrations="python manage.p makemigrations"
+migrate = alias migrate="python manage.py migrate"
+graph = alias graph="git log --all --decorate --oneline --graph"
+
 
 ===>> PAINTBALL <<===
-assembla_profili = python manage.py assembla_profili
-popola_proibizionario = python manage.py popola_proibizionario
+
+assembla_profili = alias assembla_profili="python manage.py assembla_profili"
+popola_proibizionario = alias popola_proibizionario="python manage.py popola_proibizionario"
