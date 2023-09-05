@@ -1,0 +1,10 @@
+# Ignora tutti i file .pyc
+*.pyc
+
+# Ignora le directory __pycache__
+**/__pycache__/
+
+# Ignora tutti i file nel directory .vscode
+.vscode/
+
+.mp3

@@ -19,12 +19,11 @@ from django.urls import path, include
 from compositore.views import home
 
 
-
-admin.site.site_header = 'Comando io'
-admin.site.index_title = 'Admin'
+admin.site.site_header = "Comando io"
+admin.site.index_title = "Admin"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home),
-    path('bacheca/', include('bacheca.urls')),
+    path("admin/", admin.site.urls),
+    path("", home),
+    path("bacheca/", include("bacheca.urls")),
 ]

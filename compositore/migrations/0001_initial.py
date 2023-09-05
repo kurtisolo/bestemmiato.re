@@ -4,51 +4,81 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='gods_crist_m',
+            name="gods_crist_m",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('parola', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("parola", models.CharField(max_length=100)),
             ],
             options={
-                'verbose_name_plural': 'Divinità maschili cristiane ',
+                "verbose_name_plural": "Divinità maschili cristiane ",
             },
         ),
         migrations.CreateModel(
-            name='insulti_h_m',
+            name="insulti_h_m",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('parola', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("parola", models.CharField(max_length=100)),
             ],
             options={
-                'verbose_name_plural': 'Insulti devastanti',
+                "verbose_name_plural": "Insulti devastanti",
             },
         ),
         migrations.CreateModel(
-            name='insulti_n_m',
+            name="insulti_n_m",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('parola', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("parola", models.CharField(max_length=100)),
             ],
             options={
-                'verbose_name_plural': 'Insulti medi',
+                "verbose_name_plural": "Insulti medi",
             },
         ),
         migrations.CreateModel(
-            name='insulti_s_m',
+            name="insulti_s_m",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('parola', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("parola", models.CharField(max_length=100)),
             ],
             options={
-                'verbose_name_plural': 'Insulti delicati',
+                "verbose_name_plural": "Insulti delicati",
             },
         ),
     ]

@@ -1,0 +1,5 @@
+alias superuser="python manage.py createsuperuser"
+alias runserver="python manage.py runserver"
+alias makemigrations="python manage.py makemigrations"
+alias migrate="python manage.py migrate"
+alias envactivate="source bestemmiator_env/bin/activate"

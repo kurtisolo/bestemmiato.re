@@ -5,19 +5,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bacheca', '0001_initial'),
+        ("bacheca", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='bestemmiabacheca',
-            options={'verbose_name_plural': 'Bestemmie bacheca'},
+            name="bestemmiabacheca",
+            options={"verbose_name_plural": "Bestemmie bacheca"},
         ),
         migrations.AlterField(
-            model_name='bestemmiabacheca',
-            name='data_bestemmia',
+            model_name="bestemmiabacheca",
+            name="data_bestemmia",
             field=models.DateTimeField(default=datetime.datetime.now),
         ),
     ]
