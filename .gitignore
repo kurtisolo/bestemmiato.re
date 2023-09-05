@@ -6,3 +6,5 @@
 
 # Ignora tutti i file nel directory .vscode
 .vscode/
+
+.mp3

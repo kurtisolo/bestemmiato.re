@@ -10,6 +10,7 @@ Generatore online di bestemmie randomiche.
 1. Clonare repository
 2. Creare ambiente virtuale
 3. pip install -r requirements.txt
+4. python manage.py aggiorna_dizionario (comando per popolare il database)
 
 ## Contributi
 
