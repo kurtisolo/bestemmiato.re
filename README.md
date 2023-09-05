@@ -8,7 +8,8 @@ Generatore online di bestemmie randomiche.
 
 ## Settare ambiente di lavoro
 1. Clonare repository
-2. Creare ambiente virtuale in cui installare Django
+2. Creare ambiente virtuale
+3. pip install -r requirements.txt
 
 ## Contributi
 
