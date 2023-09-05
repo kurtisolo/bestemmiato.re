@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bacheca', '0003_bestemmiabacheca_audio_file_path'),
+        ("bacheca", "0003_bestemmiabacheca_audio_file_path"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='bestemmiabacheca',
-            name='autore',
-            field=models.CharField(default='Anonimo', max_length=100),
+            model_name="bestemmiabacheca",
+            name="autore",
+            field=models.CharField(default="Anonimo", max_length=100),
         ),
     ]

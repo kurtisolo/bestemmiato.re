@@ -5,20 +5,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='BestemmiaBacheca',
+            name="BestemmiaBacheca",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('bestemmia_bacheca', models.CharField(max_length=500)),
-                ('data_bestemmia', models.DateField(default=datetime.date.today)),
-                ('likes_bestemmia', models.IntegerField(default=0)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("bestemmia_bacheca", models.CharField(max_length=500)),
+                ("data_bestemmia", models.DateField(default=datetime.date.today)),
+                ("likes_bestemmia", models.IntegerField(default=0)),
             ],
         ),
     ]
